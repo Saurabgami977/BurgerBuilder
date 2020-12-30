@@ -8,7 +8,7 @@ export default class Modal extends Component {
 
     //Returns true if show changes with respect to previous show state and only updates this component
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.show !== this.props.show
+        return nextProps.show !== this.props.show || nextProps.children !== this.props.children
     }
     //Debugger
     // componentWillUpdate() {
