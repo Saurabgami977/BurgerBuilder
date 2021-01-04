@@ -1,14 +1,14 @@
+import axios from 'axios';
 import React, { Component } from 'react';
-
-import Burger from '../../Components/Burger/Burger';
 import BuildControls from "../../Components/Burger/BuildControls/BuildControls";
-import Modal from '../../Components/UI/Modal/Modal';
+import Burger from '../../Components/Burger/Burger';
 import OrderSummary from '../../Components/Burger/OrderSummary/OrderSummary';
-import Aux from '../../HOC/Auxiliary/Auxiliary';
-import axios from '../../axios-orders'
+import Modal from '../../Components/UI/Modal/Modal';
 import Spinner from '../../Components/UI/Spinner/Spinner';
+import { default as Aux, default as Auxiliary } from '../../HOC/Auxiliary/Auxiliary';
 import withErrorHandler from "../../HOC/withErrorHandler/withErrorHandler";
-import Auxiliary from '../../HOC/Auxiliary/Auxiliary';
+
+
 
 const INGREDIENTS_PRICES = {
     salad: 0.5,
@@ -89,28 +89,17 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true })
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: "Saurav Gami",
-                address: {
-                    street: 'Danfe Tole',
-                    zipCode: '446600',
-                    country: 'Nepal',
-                },
-                email: 'saurabgami977@gmail.com',
-                deliveryMethod: 'byBike'
-            }
+        const queryParams = [];
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
         }
-        axios.post('/orders.json', order)
-            .then(res => {
-                this.setState({ loading: false, purchasing: false });
-            })
-            .catch(err => {
-                this.setState({ loading: false, purchasing: false });
-            })
+        queryParams.push('price=' + this.state.totalPrice);
+
+        const queryString = queryParams.join('&')
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        })
     }
 
     render() {
