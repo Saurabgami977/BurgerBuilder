@@ -11,12 +11,12 @@ import reducer from './store/reducers/reducer';
 const store = createStore(reducer);
 
 const app = (
-  // < BrowserRouter basename="https://saurabgami977.github.io/BurgerBuilder">
-  <Provider store={store}>
+  < Provider store={store} >
+    {/* < BrowserRouter basename="https://saurabgami977.github.io/BurgerBuilder/"> */}
     < BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
-  </Provider>
+  </Provider >
 )
 
 ReactDOM.render(
