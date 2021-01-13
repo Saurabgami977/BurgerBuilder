@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import App from './App';
+import './index.css';
+import reducer from './store/reducers/reducer';
+
+const store = createStore(reducer);
 
 const app = (
-  < BrowserRouter basename="/BurgerBuilder">
-    <App />
-  </BrowserRouter>
+  // < BrowserRouter basename="https://saurabgami977.github.io/BurgerBuilder">
+  <Provider store={store}>
+    < BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 )
 
 ReactDOM.render(

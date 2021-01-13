@@ -15,13 +15,13 @@ export default function CheckoutSummary(props) {
                 clicked={props.checkoutCancelled}
             >
                 Cancel
-                </Button>
+            </Button>
             <Button
                 btnType="Success"
                 clicked={props.checkoutContinued}
             >
                 Continue
-                </Button>
+            </Button>
         </div>
     )
 }

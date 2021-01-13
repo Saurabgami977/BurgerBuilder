@@ -27,6 +27,10 @@ export default function Order(props) {
         <div className={classes.Order}>
             <p>Ingredients: {ingredientOutput}</p>
             <p>Price: <strong>USD {props.price.toFixed(2)}</strong></p>
+            <h3>Order Detail:</h3>
+            <p>Name: {props.orderData.name}</p>
+            <p>E-mail: {props.orderData.email}</p>
+            <p>Address: {props.orderData.street}, {props.orderData.country} - {props.orderData.zipCode}</p>
         </div>
     )
 }
