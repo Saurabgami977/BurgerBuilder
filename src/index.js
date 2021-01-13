@@ -13,7 +13,7 @@ const store = createStore(reducer);
 const app = (
   // < BrowserRouter basename="https://saurabgami977.github.io/BurgerBuilder">
   <Provider store={store}>
-    < BrowserRouter>
+    < BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </Provider>
