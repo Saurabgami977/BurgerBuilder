@@ -9,7 +9,7 @@ import Orders from './Containers/Orders/Orders';
 import Auth from './Containers/Auth/Auth'
 import Logout from './Containers/Auth/Logout/Logout';
 import { connect } from 'react-redux';
-import * as actions from './store/actions/index'
+import * as actions from './store/actions/index';
 
 class App extends Component {
 
