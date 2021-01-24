@@ -1,0 +1,18 @@
+{
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "workbench.preferredLightColorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Kimbie Dark",
+    "workbench.preferredDarkColorTheme": "Kimbie Dark",
+    "workbench.preferredHighContrastColorTheme": "Kimbie Dark",
+    "workbench.statusBar.visible": false,
+    "workbench.tree.indent": 10,
+    "breadcrumbs.showArrays": false,
+    "breadcrumbs.enabled": false,
+    "workbench.editor.closeEmptyGroups": false
+}

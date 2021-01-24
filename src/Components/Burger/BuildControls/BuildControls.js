@@ -26,8 +26,8 @@ export default function BuildControls(props) {
                 className={classes.OrderButton}
                 disabled={!props.purchaseable}
                 onClick={props.ordered}>
-                Order Now
-                </button>
+                {props.isAuth ? 'Order Now' : 'SIGN UP TO ORDER'}
+            </button>
         </div>
     )
 }

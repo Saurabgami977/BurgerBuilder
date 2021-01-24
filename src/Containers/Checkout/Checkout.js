@@ -35,7 +35,6 @@ class Checkout extends Component {
         return (
             <div>
                 {summary}
-
             </div>
         )
     }
